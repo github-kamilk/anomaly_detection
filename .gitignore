@@ -1,7 +1,8 @@
 datasets/adbench
 datasets/nlp_adbench
 datasets/nsl-kdd
-
+logs
+results_e1
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

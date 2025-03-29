@@ -30,17 +30,22 @@
 
 | Grupa podejść                                   | Wybrane algorytmy                                |
 |-------------------------------------------------|--------------------------------------------------|
-| Deep learning for feature extraction            | **FTTransformer** (Sup), **ResNet** (Sup)                    |
-| Generic normality feature learning              | **AE** (Unsup), **VAE** (Unsup), **GANomaly** (Semi)         |
-| Distance-based measures                         | **REPEN** (Semi)                                      |
-| One-class classification measures               | **DeepSVDD** (Unsup), **DeepSAD** (Semi)                        |
-| Clustering-based measures                       | **DAGMM** (Unsup), **SO_GAAL** (Unsup)                                        |
-| Ranking models                                  | **DevNet** (Semi), **FEAWAD** (Semi)|
+| Deep learning for feature extraction            | **FTTransformer** (Sup, ADB), **ResNet** (Sup, ADB)                    |
+| Generic normality feature learning              | **AE** (Unsup, PyOD), **VAE** (Unsup, PyOD), **GANomaly** (Semi, ADB)         |
+| Distance-based measures                         | **REPEN** (Semi, ADB)                                      |
+| One-class classification measures               | **DeepSVDD** (Unsup, PyOD), **DeepSAD** (Semi, ADB)                        |
+| Clustering-based measures                       | **DAGMM** (Unsup, ADB), **SO_GAAL** (Unsup, PyOD)                                        |
+| Ranking models                                  | **DevNet** (Semi, PyOD), **FEAWAD** (Semi, ADB)|
 
-**PODSTAWA**: FTTransformer, AE, VAE, REPEN, DeepSVDD, DAGMM
+**PODSTAWA**: FTTransformer, AE, VAE, ~~REPEN~~, DeepSVDD, DAGMM, LUNAR
+**ROZSZERZENIE**: DevNet, ~~ResNet~~, GANomaly, ~~DeepSAD~~, SO_GAAL, FEAWAD
 
-**ROZSZERZENIE**: DevNet, ResNet, GANomaly, DeepSAD, SO_GAAL, FEAWAD
 
+Supervised: **FTTransformer**
+Semi-Supervised (unlabeled to głównie normal + zaznaczone pojedyńcze anomalie): **FEAWAD**, **DevNet**? na razie nie działa na irysach
+Unsupervised (uczone tylko na zbiorze normalnym): **AE**, **VAE**, **DeepSVDD**, **DAGMM**, **SO_GAAL**, **LUNAR**, **GANomaly**
+
+Przetestować DeepSAD
 
 # Wybór zbiorów danych 
 
@@ -52,6 +57,11 @@
 
 
 ----------------
+AUC ROC
+AUC PR/REC
+macierz pomylek!  zwrócic uwagę jaki jest threshold
+czas
+
 
 # Plan 
 
@@ -60,3 +70,28 @@
 - 28.03 Uruchomienie treniningu do Eksperymentu 1
 - 30.03 Przygotowanie zbiorów syntetycznych
 - 04.04 Uruchomienie treniningu do Eksperymentu 2
+
+
+
+
+
+# Eksperyment 1
+
+-Opisać dokładnie jakie podejście było w ADB, z podziałem na unsup, sup, semisup
+
+"Thus, we use 70% data for training and the remaining 30%
+as the test set. We use stratified sampling to keep the anomaly ratio consistent. We repeat each
+experiment 3 times and report the averag"
+
+"Hyperparameter Settings. For all the algorithms in ADBench, we use their default hyperparameter
+(HP) settings in the original paper for a fair comparis"
+
+
+# Eksperyment 2
+
+"NLP datasets are mainly considered for evaluating algorithm performance on the public datasets and are not included in the
+experiments of different types of anomalies and algorithm robustness, since such high-dimensional
+data could make it hard to generate synthetic anomalies, or introduce too much noise in input data."
+
+
+
