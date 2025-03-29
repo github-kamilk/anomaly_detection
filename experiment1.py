@@ -207,6 +207,8 @@ def run_experiment_1():
             for model_name, model_initializer in MODEL_CONFIGS.items():
                 if scenario == 'A' and model_name in SOMEHOW_SUPERVISED:
                     continue
+                if scenario != 'A' and model_name not in SOMEHOW_SUPERVISED:
+                    continue
                 current_combination += 1
                 progress = (current_combination / total_combinations) * 100
                 
