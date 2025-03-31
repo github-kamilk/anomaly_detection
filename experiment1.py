@@ -93,11 +93,11 @@ SCENARIOS = ["A", "B", "C", "D", "E"]
 # in a dictionary for looping:
 MODEL_CONFIGS = {
     "FTTransformer": lambda:  FTTransformer(seed=random.randint(0, 2**32 - 1), model_name='FTTransformer'),
-    "FEAWAD": lambda: FEAWAD(seed=random.randint(0, 2**32 - 1)),         
-    "DevNet": lambda: DevNet(),
-    "AE": lambda: AutoEncoder(),
-    "VAE": lambda: VAE(),
-    "DeepSVDD": lambda: DeepSVDD(),
+    # "FEAWAD": lambda: FEAWAD(seed=random.randint(0, 2**32 - 1)),         
+    "DevNet": lambda: DevNet(seed=random.randint(0, 2**32 - 1)),
+    "AE": lambda: AutoEncoder(random_state=random.randint(0, 2**32 - 1)),
+    "VAE": lambda: VAE(random_state=random.randint(0, 2**32 - 1)),
+    "DeepSVDD": lambda: DeepSVDD, 
     "DAGMM": lambda: DAGMM(seed=random.randint(0, 2**32 - 1)),
     "SO_GAAL": lambda: SO_GAAL(),
     "LUNAR": lambda: LUNAR(),
@@ -115,12 +115,14 @@ SOMEHOW_SUPERVISED = ['FTTransformer', 'FEAWAD', 'DevNet']
 # 3. Helper functions
 ##############################################################################
 
-def get_prediction_score(model_name, model, X_test):
+def get_prediction_score(model_name, model, X_test, X_train=None):
     """Get prediction scores based on model type"""
-    if model_name in ['FTTransformer', 'DAGMM', 'FEAWAD', 'GANoma']:
+    if model_name in ['FTTransformer', 'FEAWAD', 'GANoma']:
         return model.predict_score(X_test)
     elif model_name in ['AE', 'VAE', 'DeepSVDD', 'DevNet', 'SO_GAAL', 'LUNAR']:
         return model.predict_proba(X_test)[:, 1]
+    elif model_name == 'DAGMM':
+        return model.predict_score(X_train, X_test)
 
 
 @contextmanager
@@ -216,14 +218,24 @@ def run_experiment_1():
                 
                 try:
                     with timer(f"Initialize {model_name}"):
-                        model = model_initializer()
+                        if model_name != "DeepSVDD":
+                            model = model_initializer()
+                        else:
+                            model = DeepSVDD(n_features=X_train.shape[1])
                     
                     # Fit the model to the data
                     with timer(f"Train {model_name} on {dataset_name} scenario {scenario}"):
-                        model.fit(X_train, y_train)
+                        if model_name not in SOMEHOW_SUPERVISED and model_name != 'GANoma' and model_name != 'DAGMM':
+                            model.fit(X_train)
+                        else:
+                            model.fit(X_train, y_train)
                     
                     with timer(f"Predict with {model_name}"):
-                        scores = get_prediction_score(model_name, model, X_test)  
+                        if model_name != 'DAGMM':
+                            scores = get_prediction_score(model_name, model, X_test)
+                        else:  
+                            scores = get_prediction_score(model_name, model, X_test, X_train)  
+
 
                     if scores is None:
                         logging.warning(f"Model '{model_name}' did not return results. Skipping save.")
