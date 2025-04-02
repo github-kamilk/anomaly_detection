@@ -1,0 +1,449 @@
+[2025-03-31 21:43:57] [INFO] Logging initialized
+[2025-03-31 21:43:57] [INFO] ================================================================================
+[2025-03-31 21:43:57] [INFO] Starting experiment at: 2025-03-31 21:43:57
+[2025-03-31 21:43:57] [INFO] Python version: 3.11.11 (main, Dec  9 2024, 15:32:27) [GCC 8.5.0 20210514 (Red Hat 8.5.0-22)]
+[2025-03-31 21:43:57] [INFO] Platform: Linux-4.18.0-553.36.1.el8_10.x86_64-x86_64-with-glibc2.28
+[2025-03-31 21:43:57] [INFO] Datasets: NSL-KDD, CreditCard, AnnThyroid, EmailSpam
+[2025-03-31 21:43:57] [INFO] Scenarios: A, B, C, D, E
+[2025-03-31 21:43:57] [INFO] Models: FTTransformer, DevNet, AE, VAE, DeepSVDD, DAGMM, SO_GAAL, LUNAR, GANoma
+[2025-03-31 21:43:57] [INFO] ================================================================================
+[2025-03-31 21:43:57] [INFO] Starting Experiment 1 with 180 total model combinations
+[2025-03-31 21:43:57] [INFO] Loading dataset: NSL-KDD
+[2025-03-31 21:43:57] [INFO] Task 'Load dataset NSL-KDD' completed in 0.00 seconds
+[2025-03-31 21:43:57] [INFO] Test set shape: (2200, 119), Anomalies: 200/2200 (9.09%)
+[2025-03-31 21:43:57] [INFO] Processing dataset: NSL-KDD, scenario: A
+[2025-03-31 21:43:57] [INFO] Training set shape: (5000, 119), Anomalies: 0/5000 (0.00%)
+[2025-03-31 21:43:57] [INFO] Progress: 1/180 (0.6%) - Training model: AE
+[2025-03-31 21:43:57] [INFO] Task 'Initialize AE' completed in 0.00 seconds
+[2025-03-31 21:44:04] [INFO] Task 'Train AE on NSL-KDD scenario A' completed in 6.57 seconds
+[2025-03-31 21:44:04] [INFO] Task 'Predict with AE' completed in 0.06 seconds
+[2025-03-31 21:44:04] [INFO] Results saved to: results_e1/E1_NSL-KDD_A_AE_results.npz
+[2025-03-31 21:44:04] [INFO] Score statistics - min: 0.0003, max: 1.0000, mean: 0.0776, std: 0.1851
+[2025-03-31 21:44:04] [INFO] Progress: 2/180 (1.1%) - Training model: VAE
+[2025-03-31 21:44:04] [INFO] Task 'Initialize VAE' completed in 0.00 seconds
+[2025-03-31 21:44:36] [INFO] Task 'Train VAE on NSL-KDD scenario A' completed in 32.39 seconds
+[2025-03-31 21:44:36] [INFO] Task 'Predict with VAE' completed in 0.08 seconds
+[2025-03-31 21:44:36] [INFO] Results saved to: results_e1/E1_NSL-KDD_A_VAE_results.npz
+[2025-03-31 21:44:36] [INFO] Score statistics - min: 0.0003, max: 1.0000, mean: 0.0813, std: 0.1807
+[2025-03-31 21:44:36] [INFO] Progress: 3/180 (1.7%) - Training model: DeepSVDD
+[2025-03-31 21:44:36] [INFO] Task 'Initialize DeepSVDD' completed in 0.00 seconds
+[2025-03-31 21:44:42] [INFO] Task 'Train DeepSVDD on NSL-KDD scenario A' completed in 5.79 seconds
+[2025-03-31 21:44:42] [INFO] Task 'Predict with DeepSVDD' completed in 0.00 seconds
+[2025-03-31 21:44:42] [INFO] Results saved to: results_e1/E1_NSL-KDD_A_DeepSVDD_results.npz
+[2025-03-31 21:44:42] [INFO] Score statistics - min: 0.0000, max: 1.0000, mean: 0.0135, std: 0.0394
+[2025-03-31 21:44:42] [INFO] Progress: 4/180 (2.2%) - Training model: DAGMM
+[2025-03-31 21:44:42] [INFO] Task 'Initialize DAGMM' completed in 0.00 seconds
+[2025-03-31 21:45:11] [INFO] Task 'Train DAGMM on NSL-KDD scenario A' completed in 28.83 seconds
+[2025-03-31 21:45:11] [INFO] Task 'Predict with DAGMM' completed in 0.12 seconds
+[2025-03-31 21:45:11] [INFO] Results saved to: results_e1/E1_NSL-KDD_A_DAGMM_results.npz
+[2025-03-31 21:45:11] [INFO] Score statistics - min: -8.2493, max: 27.6310, mean: -6.4314, std: 3.0928
+[2025-03-31 21:45:11] [INFO] Progress: 5/180 (2.8%) - Training model: SO_GAAL
+[2025-03-31 21:45:11] [INFO] Task 'Initialize SO_GAAL' completed in 0.00 seconds
+[2025-03-31 21:45:24] [INFO] Task 'Train SO_GAAL on NSL-KDD scenario A' completed in 12.79 seconds
+[2025-03-31 21:45:24] [INFO] Task 'Predict with SO_GAAL' completed in 0.00 seconds
+[2025-03-31 21:45:24] [INFO] Results saved to: results_e1/E1_NSL-KDD_A_SO_GAAL_results.npz
+[2025-03-31 21:45:24] [INFO] Score statistics - min: 0.0000, max: 1.0000, mean: 0.9393, std: 0.2249
+[2025-03-31 21:45:24] [INFO] Progress: 6/180 (3.3%) - Training model: LUNAR
+[2025-03-31 21:45:24] [INFO] Task 'Initialize LUNAR' completed in 0.00 seconds
+[2025-03-31 21:45:29] [INFO] Task 'Train LUNAR on NSL-KDD scenario A' completed in 4.73 seconds
+[2025-03-31 21:45:29] [INFO] Task 'Predict with LUNAR' completed in 0.03 seconds
+[2025-03-31 21:45:29] [INFO] Results saved to: results_e1/E1_NSL-KDD_A_LUNAR_results.npz
+[2025-03-31 21:45:29] [INFO] Score statistics - min: 0.0000, max: 1.0000, mean: 0.1025, std: 0.2352
+[2025-03-31 21:45:29] [INFO] Progress: 7/180 (3.9%) - Training model: GANoma
+[2025-03-31 21:45:29] [INFO] Task 'Initialize GANoma' completed in 0.00 seconds
+[2025-03-31 21:45:42] [INFO] Task 'Train GANoma on NSL-KDD scenario A' completed in 13.50 seconds
+[2025-03-31 21:45:42] [INFO] Task 'Predict with GANoma' completed in 0.01 seconds
+[2025-03-31 21:45:42] [INFO] Results saved to: results_e1/E1_NSL-KDD_A_GANoma_results.npz
+[2025-03-31 21:45:42] [INFO] Score statistics - min: 0.0295, max: 20.6166, mean: 0.9350, std: 1.5854
+[2025-03-31 21:45:42] [INFO] Processing dataset: NSL-KDD, scenario: B
+[2025-03-31 21:45:42] [INFO] Training set shape: (5025, 119), Anomalies: 25/5025 (0.50%)
+[2025-03-31 21:45:42] [INFO] Progress: 8/180 (4.4%) - Training model: FTTransformer
+[2025-03-31 21:45:42] [INFO] Task 'Initialize FTTransformer' completed in 0.00 seconds
+[2025-03-31 22:01:08] [INFO] Task 'Train FTTransformer on NSL-KDD scenario B' completed in 15 minutes and 25.48 seconds
+[2025-03-31 22:01:08] [INFO] Task 'Predict with FTTransformer' completed in 0.71 seconds
+[2025-03-31 22:01:08] [INFO] Results saved to: results_e1/E1_NSL-KDD_B_FTTransformer_results.npz
+[2025-03-31 22:01:08] [INFO] Score statistics - min: 0.0000, max: 0.9987, mean: 0.0580, std: 0.2310
+[2025-03-31 22:01:08] [INFO] Progress: 9/180 (5.0%) - Training model: DevNet
+[2025-03-31 22:01:08] [INFO] Task 'Initialize DevNet' completed in 0.00 seconds
+[2025-03-31 22:01:08] [ERROR] Error processing DevNet on NSL-KDD scenario B: DevNet.__init__() got an unexpected keyword argument 'seed'
+Traceback (most recent call last):
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 222, in run_experiment_1
+    model = model_initializer()
+            ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 97, in <lambda>
+    "DevNet": lambda: DevNet(seed=random.randint(0, 2**32 - 1)),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DevNet.__init__() got an unexpected keyword argument 'seed'
+[2025-03-31 22:01:08] [INFO] Processing dataset: NSL-KDD, scenario: C
+[2025-03-31 22:01:08] [INFO] Training set shape: (5050, 119), Anomalies: 50/5050 (0.99%)
+[2025-03-31 22:01:08] [INFO] Progress: 10/180 (5.6%) - Training model: FTTransformer
+[2025-03-31 22:01:08] [INFO] Task 'Initialize FTTransformer' completed in 0.00 seconds
+[2025-03-31 22:16:42] [INFO] Task 'Train FTTransformer on NSL-KDD scenario C' completed in 15 minutes and 33.96 seconds
+[2025-03-31 22:16:43] [INFO] Task 'Predict with FTTransformer' completed in 0.72 seconds
+[2025-03-31 22:16:43] [INFO] Results saved to: results_e1/E1_NSL-KDD_C_FTTransformer_results.npz
+[2025-03-31 22:16:43] [INFO] Score statistics - min: 0.0001, max: 0.9988, mean: 0.0812, std: 0.2713
+[2025-03-31 22:16:43] [INFO] Progress: 11/180 (6.1%) - Training model: DevNet
+[2025-03-31 22:16:43] [INFO] Task 'Initialize DevNet' completed in 0.00 seconds
+[2025-03-31 22:16:43] [ERROR] Error processing DevNet on NSL-KDD scenario C: DevNet.__init__() got an unexpected keyword argument 'seed'
+Traceback (most recent call last):
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 222, in run_experiment_1
+    model = model_initializer()
+            ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 97, in <lambda>
+    "DevNet": lambda: DevNet(seed=random.randint(0, 2**32 - 1)),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DevNet.__init__() got an unexpected keyword argument 'seed'
+[2025-03-31 22:16:43] [INFO] Processing dataset: NSL-KDD, scenario: D
+[2025-03-31 22:16:43] [INFO] Training set shape: (5250, 119), Anomalies: 250/5250 (4.76%)
+[2025-03-31 22:16:43] [INFO] Progress: 12/180 (6.7%) - Training model: FTTransformer
+[2025-03-31 22:16:43] [INFO] Task 'Initialize FTTransformer' completed in 0.00 seconds
+[2025-03-31 22:32:37] [INFO] Task 'Train FTTransformer on NSL-KDD scenario D' completed in 15 minutes and 54.04 seconds
+[2025-03-31 22:32:38] [INFO] Task 'Predict with FTTransformer' completed in 0.77 seconds
+[2025-03-31 22:32:38] [INFO] Results saved to: results_e1/E1_NSL-KDD_D_FTTransformer_results.npz
+[2025-03-31 22:32:38] [INFO] Score statistics - min: 0.0002, max: 0.9996, mean: 0.0865, std: 0.2784
+[2025-03-31 22:32:38] [INFO] Progress: 13/180 (7.2%) - Training model: DevNet
+[2025-03-31 22:32:38] [INFO] Task 'Initialize DevNet' completed in 0.00 seconds
+[2025-03-31 22:32:38] [ERROR] Error processing DevNet on NSL-KDD scenario D: DevNet.__init__() got an unexpected keyword argument 'seed'
+Traceback (most recent call last):
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 222, in run_experiment_1
+    model = model_initializer()
+            ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 97, in <lambda>
+    "DevNet": lambda: DevNet(seed=random.randint(0, 2**32 - 1)),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DevNet.__init__() got an unexpected keyword argument 'seed'
+[2025-03-31 22:32:38] [INFO] Processing dataset: NSL-KDD, scenario: E
+[2025-03-31 22:32:38] [INFO] Training set shape: (5500, 119), Anomalies: 500/5500 (9.09%)
+[2025-03-31 22:32:38] [INFO] Progress: 14/180 (7.8%) - Training model: FTTransformer
+[2025-03-31 22:32:38] [INFO] Task 'Initialize FTTransformer' completed in 0.00 seconds
+[2025-03-31 22:49:37] [INFO] Task 'Train FTTransformer on NSL-KDD scenario E' completed in 16 minutes and 59.29 seconds
+[2025-03-31 22:49:38] [INFO] Task 'Predict with FTTransformer' completed in 0.72 seconds
+[2025-03-31 22:49:38] [INFO] Results saved to: results_e1/E1_NSL-KDD_E_FTTransformer_results.npz
+[2025-03-31 22:49:38] [INFO] Score statistics - min: 0.0002, max: 0.9998, mean: 0.0895, std: 0.2840
+[2025-03-31 22:49:38] [INFO] Progress: 15/180 (8.3%) - Training model: DevNet
+[2025-03-31 22:49:38] [INFO] Task 'Initialize DevNet' completed in 0.00 seconds
+[2025-03-31 22:49:38] [ERROR] Error processing DevNet on NSL-KDD scenario E: DevNet.__init__() got an unexpected keyword argument 'seed'
+Traceback (most recent call last):
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 222, in run_experiment_1
+    model = model_initializer()
+            ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 97, in <lambda>
+    "DevNet": lambda: DevNet(seed=random.randint(0, 2**32 - 1)),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DevNet.__init__() got an unexpected keyword argument 'seed'
+[2025-03-31 22:49:38] [INFO] Loading dataset: CreditCard
+[2025-03-31 22:49:38] [INFO] Task 'Load dataset CreditCard' completed in 0.00 seconds
+[2025-03-31 22:49:38] [INFO] Test set shape: (2200, 29), Anomalies: 200/2200 (9.09%)
+[2025-03-31 22:49:38] [INFO] Processing dataset: CreditCard, scenario: A
+[2025-03-31 22:49:38] [INFO] Training set shape: (5000, 29), Anomalies: 0/5000 (0.00%)
+[2025-03-31 22:49:38] [INFO] Progress: 16/180 (8.9%) - Training model: AE
+[2025-03-31 22:49:38] [INFO] Task 'Initialize AE' completed in 0.00 seconds
+[2025-03-31 22:49:42] [INFO] Task 'Train AE on CreditCard scenario A' completed in 4.12 seconds
+[2025-03-31 22:49:42] [INFO] Task 'Predict with AE' completed in 0.06 seconds
+[2025-03-31 22:49:42] [INFO] Results saved to: results_e1/E1_CreditCard_A_AE_results.npz
+[2025-03-31 22:49:42] [INFO] Score statistics - min: 0.0030, max: 1.0000, mean: 0.0957, std: 0.1736
+[2025-03-31 22:49:42] [INFO] Progress: 17/180 (9.4%) - Training model: VAE
+[2025-03-31 22:49:42] [INFO] Task 'Initialize VAE' completed in 0.00 seconds
+[2025-03-31 22:50:11] [INFO] Task 'Train VAE on CreditCard scenario A' completed in 29.28 seconds
+[2025-03-31 22:50:11] [INFO] Task 'Predict with VAE' completed in 0.07 seconds
+[2025-03-31 22:50:11] [INFO] Results saved to: results_e1/E1_CreditCard_A_VAE_results.npz
+[2025-03-31 22:50:11] [INFO] Score statistics - min: 0.0053, max: 1.0000, mean: 0.1017, std: 0.1630
+[2025-03-31 22:50:11] [INFO] Progress: 18/180 (10.0%) - Training model: DeepSVDD
+[2025-03-31 22:50:11] [INFO] Task 'Initialize DeepSVDD' completed in 0.00 seconds
+[2025-03-31 22:50:17] [INFO] Task 'Train DeepSVDD on CreditCard scenario A' completed in 5.39 seconds
+[2025-03-31 22:50:17] [INFO] Task 'Predict with DeepSVDD' completed in 0.00 seconds
+[2025-03-31 22:50:17] [INFO] Results saved to: results_e1/E1_CreditCard_A_DeepSVDD_results.npz
+[2025-03-31 22:50:17] [INFO] Score statistics - min: 0.0004, max: 1.0000, mean: 0.0391, std: 0.1376
+[2025-03-31 22:50:17] [INFO] Progress: 19/180 (10.6%) - Training model: DAGMM
+[2025-03-31 22:50:17] [INFO] Task 'Initialize DAGMM' completed in 0.00 seconds
+[2025-03-31 22:50:39] [INFO] Task 'Train DAGMM on CreditCard scenario A' completed in 22.37 seconds
+[2025-03-31 22:50:39] [INFO] Task 'Predict with DAGMM' completed in 0.10 seconds
+[2025-03-31 22:50:39] [INFO] Results saved to: results_e1/E1_CreditCard_A_DAGMM_results.npz
+[2025-03-31 22:50:39] [INFO] Score statistics - min: -7.3628, max: 27.4766, mean: -5.6101, std: 2.4183
+[2025-03-31 22:50:39] [INFO] Progress: 20/180 (11.1%) - Training model: SO_GAAL
+[2025-03-31 22:50:39] [INFO] Task 'Initialize SO_GAAL' completed in 0.00 seconds
+[2025-03-31 22:50:52] [INFO] Task 'Train SO_GAAL on CreditCard scenario A' completed in 12.29 seconds
+[2025-03-31 22:50:52] [INFO] Task 'Predict with SO_GAAL' completed in 0.00 seconds
+[2025-03-31 22:50:52] [INFO] Results saved to: results_e1/E1_CreditCard_A_SO_GAAL_results.npz
+[2025-03-31 22:50:52] [INFO] Score statistics - min: 0.0000, max: 1.0000, mean: 0.9917, std: 0.0416
+[2025-03-31 22:50:52] [INFO] Progress: 21/180 (11.7%) - Training model: LUNAR
+[2025-03-31 22:50:52] [INFO] Task 'Initialize LUNAR' completed in 0.00 seconds
+[2025-03-31 22:50:56] [INFO] Task 'Train LUNAR on CreditCard scenario A' completed in 4.47 seconds
+[2025-03-31 22:50:56] [INFO] Task 'Predict with LUNAR' completed in 0.02 seconds
+[2025-03-31 22:50:56] [INFO] Results saved to: results_e1/E1_CreditCard_A_LUNAR_results.npz
+[2025-03-31 22:50:56] [INFO] Score statistics - min: 0.0136, max: 1.0000, mean: 0.3370, std: 0.2495
+[2025-03-31 22:50:56] [INFO] Progress: 22/180 (12.2%) - Training model: GANoma
+[2025-03-31 22:50:56] [INFO] Task 'Initialize GANoma' completed in 0.00 seconds
+[2025-03-31 22:51:05] [INFO] Task 'Train GANoma on CreditCard scenario A' completed in 9.40 seconds
+[2025-03-31 22:51:05] [INFO] Task 'Predict with GANoma' completed in 0.00 seconds
+[2025-03-31 22:51:05] [INFO] Results saved to: results_e1/E1_CreditCard_A_GANoma_results.npz
+[2025-03-31 22:51:05] [INFO] Score statistics - min: 0.0368, max: 3.4601, mean: 0.3878, std: 0.7421
+[2025-03-31 22:51:05] [INFO] Processing dataset: CreditCard, scenario: B
+[2025-03-31 22:51:05] [INFO] Training set shape: (5025, 29), Anomalies: 25/5025 (0.50%)
+[2025-03-31 22:51:05] [INFO] Progress: 23/180 (12.8%) - Training model: FTTransformer
+[2025-03-31 22:51:05] [INFO] Task 'Initialize FTTransformer' completed in 0.00 seconds
+[2025-03-31 22:57:19] [INFO] Task 'Train FTTransformer on CreditCard scenario B' completed in 6 minutes and 13.36 seconds
+[2025-03-31 22:57:19] [INFO] Task 'Predict with FTTransformer' completed in 0.21 seconds
+[2025-03-31 22:57:19] [INFO] Results saved to: results_e1/E1_CreditCard_B_FTTransformer_results.npz
+[2025-03-31 22:57:19] [INFO] Score statistics - min: 0.0000, max: 0.9963, mean: 0.0742, std: 0.2605
+[2025-03-31 22:57:19] [INFO] Progress: 24/180 (13.3%) - Training model: DevNet
+[2025-03-31 22:57:19] [INFO] Task 'Initialize DevNet' completed in 0.00 seconds
+[2025-03-31 22:57:19] [ERROR] Error processing DevNet on CreditCard scenario B: DevNet.__init__() got an unexpected keyword argument 'seed'
+Traceback (most recent call last):
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 222, in run_experiment_1
+    model = model_initializer()
+            ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 97, in <lambda>
+    "DevNet": lambda: DevNet(seed=random.randint(0, 2**32 - 1)),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DevNet.__init__() got an unexpected keyword argument 'seed'
+[2025-03-31 22:57:19] [INFO] Processing dataset: CreditCard, scenario: C
+[2025-03-31 22:57:19] [INFO] Training set shape: (5050, 29), Anomalies: 50/5050 (0.99%)
+[2025-03-31 22:57:19] [INFO] Progress: 25/180 (13.9%) - Training model: FTTransformer
+[2025-03-31 22:57:19] [INFO] Task 'Initialize FTTransformer' completed in 0.00 seconds
+[2025-03-31 23:03:46] [INFO] Task 'Train FTTransformer on CreditCard scenario C' completed in 6 minutes and 27.47 seconds
+[2025-03-31 23:03:47] [INFO] Task 'Predict with FTTransformer' completed in 0.17 seconds
+[2025-03-31 23:03:47] [INFO] Results saved to: results_e1/E1_CreditCard_C_FTTransformer_results.npz
+[2025-03-31 23:03:47] [INFO] Score statistics - min: 0.0000, max: 0.9971, mean: 0.0746, std: 0.2608
+[2025-03-31 23:03:47] [INFO] Progress: 26/180 (14.4%) - Training model: DevNet
+[2025-03-31 23:03:47] [INFO] Task 'Initialize DevNet' completed in 0.00 seconds
+[2025-03-31 23:03:47] [ERROR] Error processing DevNet on CreditCard scenario C: DevNet.__init__() got an unexpected keyword argument 'seed'
+Traceback (most recent call last):
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 222, in run_experiment_1
+    model = model_initializer()
+            ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 97, in <lambda>
+    "DevNet": lambda: DevNet(seed=random.randint(0, 2**32 - 1)),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DevNet.__init__() got an unexpected keyword argument 'seed'
+[2025-03-31 23:03:47] [INFO] Processing dataset: CreditCard, scenario: D
+[2025-03-31 23:03:47] [INFO] Training set shape: (5150, 29), Anomalies: 150/5150 (2.91%)
+[2025-03-31 23:03:47] [INFO] Progress: 27/180 (15.0%) - Training model: FTTransformer
+[2025-03-31 23:03:47] [INFO] Task 'Initialize FTTransformer' completed in 0.00 seconds
+[2025-03-31 23:10:09] [INFO] Task 'Train FTTransformer on CreditCard scenario D' completed in 6 minutes and 22.19 seconds
+[2025-03-31 23:10:09] [INFO] Task 'Predict with FTTransformer' completed in 0.19 seconds
+[2025-03-31 23:10:09] [INFO] Results saved to: results_e1/E1_CreditCard_D_FTTransformer_results.npz
+[2025-03-31 23:10:09] [INFO] Score statistics - min: 0.0000, max: 0.9975, mean: 0.0805, std: 0.2706
+[2025-03-31 23:10:09] [INFO] Progress: 28/180 (15.6%) - Training model: DevNet
+[2025-03-31 23:10:09] [INFO] Task 'Initialize DevNet' completed in 0.00 seconds
+[2025-03-31 23:10:09] [ERROR] Error processing DevNet on CreditCard scenario D: DevNet.__init__() got an unexpected keyword argument 'seed'
+Traceback (most recent call last):
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 222, in run_experiment_1
+    model = model_initializer()
+            ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 97, in <lambda>
+    "DevNet": lambda: DevNet(seed=random.randint(0, 2**32 - 1)),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DevNet.__init__() got an unexpected keyword argument 'seed'
+[2025-03-31 23:10:09] [INFO] Processing dataset: CreditCard, scenario: E
+[2025-03-31 23:10:09] [INFO] Training set shape: (5292, 29), Anomalies: 292/5292 (5.52%)
+[2025-03-31 23:10:09] [INFO] Progress: 29/180 (16.1%) - Training model: FTTransformer
+[2025-03-31 23:10:09] [INFO] Task 'Initialize FTTransformer' completed in 0.00 seconds
+[2025-03-31 23:16:55] [INFO] Task 'Train FTTransformer on CreditCard scenario E' completed in 6 minutes and 46.05 seconds
+[2025-03-31 23:16:55] [INFO] Task 'Predict with FTTransformer' completed in 0.21 seconds
+[2025-03-31 23:16:55] [INFO] Results saved to: results_e1/E1_CreditCard_E_FTTransformer_results.npz
+[2025-03-31 23:16:55] [INFO] Score statistics - min: 0.0000, max: 0.9986, mean: 0.0810, std: 0.2708
+[2025-03-31 23:16:55] [INFO] Progress: 30/180 (16.7%) - Training model: DevNet
+[2025-03-31 23:16:55] [INFO] Task 'Initialize DevNet' completed in 0.00 seconds
+[2025-03-31 23:16:55] [ERROR] Error processing DevNet on CreditCard scenario E: DevNet.__init__() got an unexpected keyword argument 'seed'
+Traceback (most recent call last):
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 222, in run_experiment_1
+    model = model_initializer()
+            ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 97, in <lambda>
+    "DevNet": lambda: DevNet(seed=random.randint(0, 2**32 - 1)),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DevNet.__init__() got an unexpected keyword argument 'seed'
+[2025-03-31 23:16:55] [INFO] Loading dataset: AnnThyroid
+[2025-03-31 23:16:55] [INFO] Task 'Load dataset AnnThyroid' completed in 0.00 seconds
+[2025-03-31 23:16:55] [INFO] Test set shape: (1100, 6), Anomalies: 100/1100 (9.09%)
+[2025-03-31 23:16:55] [INFO] Processing dataset: AnnThyroid, scenario: A
+[2025-03-31 23:16:55] [INFO] Training set shape: (3000, 6), Anomalies: 0/3000 (0.00%)
+[2025-03-31 23:16:55] [INFO] Progress: 31/180 (17.2%) - Training model: AE
+[2025-03-31 23:16:55] [INFO] Task 'Initialize AE' completed in 0.00 seconds
+[2025-03-31 23:16:58] [INFO] Task 'Train AE on AnnThyroid scenario A' completed in 2.26 seconds
+[2025-03-31 23:16:58] [INFO] Task 'Predict with AE' completed in 0.03 seconds
+[2025-03-31 23:16:58] [INFO] Results saved to: results_e1/E1_AnnThyroid_A_AE_results.npz
+[2025-03-31 23:16:58] [INFO] Score statistics - min: 0.0024, max: 1.0000, mean: 0.1384, std: 0.0989
+[2025-03-31 23:16:58] [INFO] Progress: 32/180 (17.8%) - Training model: VAE
+[2025-03-31 23:16:58] [INFO] Task 'Initialize VAE' completed in 0.00 seconds
+[2025-03-31 23:17:14] [INFO] Task 'Train VAE on AnnThyroid scenario A' completed in 16.19 seconds
+[2025-03-31 23:17:14] [INFO] Task 'Predict with VAE' completed in 0.04 seconds
+[2025-03-31 23:17:14] [INFO] Results saved to: results_e1/E1_AnnThyroid_A_VAE_results.npz
+[2025-03-31 23:17:14] [INFO] Score statistics - min: 0.0022, max: 1.0000, mean: 0.0689, std: 0.0964
+[2025-03-31 23:17:14] [INFO] Progress: 33/180 (18.3%) - Training model: DeepSVDD
+[2025-03-31 23:17:14] [INFO] Task 'Initialize DeepSVDD' completed in 0.00 seconds
+[2025-03-31 23:17:17] [INFO] Task 'Train DeepSVDD on AnnThyroid scenario A' completed in 3.32 seconds
+[2025-03-31 23:17:17] [INFO] Task 'Predict with DeepSVDD' completed in 0.00 seconds
+[2025-03-31 23:17:17] [INFO] Results saved to: results_e1/E1_AnnThyroid_A_DeepSVDD_results.npz
+[2025-03-31 23:17:17] [INFO] Score statistics - min: 0.0000, max: 1.0000, mean: 0.0148, std: 0.0817
+[2025-03-31 23:17:17] [INFO] Progress: 34/180 (18.9%) - Training model: DAGMM
+[2025-03-31 23:17:17] [INFO] Task 'Initialize DAGMM' completed in 0.00 seconds
+[2025-03-31 23:17:30] [INFO] Task 'Train DAGMM on AnnThyroid scenario A' completed in 13.01 seconds
+[2025-03-31 23:17:30] [INFO] Task 'Predict with DAGMM' completed in 0.09 seconds
+[2025-03-31 23:17:30] [INFO] Results saved to: results_e1/E1_AnnThyroid_A_DAGMM_results.npz
+[2025-03-31 23:17:30] [INFO] Score statistics - min: -6.4943, max: 27.6310, mean: -5.2364, std: 1.9466
+[2025-03-31 23:17:30] [INFO] Progress: 35/180 (19.4%) - Training model: SO_GAAL
+[2025-03-31 23:17:30] [INFO] Task 'Initialize SO_GAAL' completed in 0.00 seconds
+[2025-03-31 23:17:32] [INFO] Task 'Train SO_GAAL on AnnThyroid scenario A' completed in 1.26 seconds
+[2025-03-31 23:17:32] [INFO] Task 'Predict with SO_GAAL' completed in 0.00 seconds
+[2025-03-31 23:17:32] [INFO] Results saved to: results_e1/E1_AnnThyroid_A_SO_GAAL_results.npz
+[2025-03-31 23:17:32] [INFO] Score statistics - min: 0.0038, max: 1.0000, mean: 0.9447, std: 0.1574
+[2025-03-31 23:17:32] [INFO] Progress: 36/180 (20.0%) - Training model: LUNAR
+[2025-03-31 23:17:32] [INFO] Task 'Initialize LUNAR' completed in 0.00 seconds
+[2025-03-31 23:17:34] [INFO] Task 'Train LUNAR on AnnThyroid scenario A' completed in 2.96 seconds
+[2025-03-31 23:17:34] [INFO] Task 'Predict with LUNAR' completed in 0.02 seconds
+[2025-03-31 23:17:34] [INFO] Results saved to: results_e1/E1_AnnThyroid_A_LUNAR_results.npz
+[2025-03-31 23:17:34] [INFO] Score statistics - min: 0.0046, max: 1.0000, mean: 0.2144, std: 0.1715
+[2025-03-31 23:17:34] [INFO] Progress: 37/180 (20.6%) - Training model: GANoma
+[2025-03-31 23:17:34] [INFO] Task 'Initialize GANoma' completed in 0.00 seconds
+[2025-03-31 23:17:40] [INFO] Task 'Train GANoma on AnnThyroid scenario A' completed in 5.37 seconds
+[2025-03-31 23:17:40] [INFO] Task 'Predict with GANoma' completed in 0.00 seconds
+[2025-03-31 23:17:40] [INFO] Results saved to: results_e1/E1_AnnThyroid_A_GANoma_results.npz
+[2025-03-31 23:17:40] [INFO] Score statistics - min: 0.0007, max: 0.8239, mean: 0.0655, std: 0.1047
+[2025-03-31 23:17:40] [INFO] Processing dataset: AnnThyroid, scenario: B
+[2025-03-31 23:17:40] [INFO] Training set shape: (3015, 6), Anomalies: 15/3015 (0.50%)
+[2025-03-31 23:17:40] [INFO] Progress: 38/180 (21.1%) - Training model: FTTransformer
+[2025-03-31 23:17:40] [INFO] Task 'Initialize FTTransformer' completed in 0.00 seconds
+[2025-03-31 23:20:27] [INFO] Task 'Train FTTransformer on AnnThyroid scenario B' completed in 2 minutes and 47.15 seconds
+[2025-03-31 23:20:27] [INFO] Task 'Predict with FTTransformer' completed in 0.06 seconds
+[2025-03-31 23:20:27] [INFO] Results saved to: results_e1/E1_AnnThyroid_B_FTTransformer_results.npz
+[2025-03-31 23:20:27] [INFO] Score statistics - min: 0.0001, max: 0.9868, mean: 0.0227, std: 0.1344
+[2025-03-31 23:20:27] [INFO] Progress: 39/180 (21.7%) - Training model: DevNet
+[2025-03-31 23:20:27] [INFO] Task 'Initialize DevNet' completed in 0.00 seconds
+[2025-03-31 23:20:27] [ERROR] Error processing DevNet on AnnThyroid scenario B: DevNet.__init__() got an unexpected keyword argument 'seed'
+Traceback (most recent call last):
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 222, in run_experiment_1
+    model = model_initializer()
+            ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 97, in <lambda>
+    "DevNet": lambda: DevNet(seed=random.randint(0, 2**32 - 1)),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DevNet.__init__() got an unexpected keyword argument 'seed'
+[2025-03-31 23:20:27] [INFO] Processing dataset: AnnThyroid, scenario: C
+[2025-03-31 23:20:27] [INFO] Training set shape: (3030, 6), Anomalies: 30/3030 (0.99%)
+[2025-03-31 23:20:27] [INFO] Progress: 40/180 (22.2%) - Training model: FTTransformer
+[2025-03-31 23:20:27] [INFO] Task 'Initialize FTTransformer' completed in 0.00 seconds
+[2025-03-31 23:23:20] [INFO] Task 'Train FTTransformer on AnnThyroid scenario C' completed in 2 minutes and 52.67 seconds
+[2025-03-31 23:23:20] [INFO] Task 'Predict with FTTransformer' completed in 0.06 seconds
+[2025-03-31 23:23:20] [INFO] Results saved to: results_e1/E1_AnnThyroid_C_FTTransformer_results.npz
+[2025-03-31 23:23:20] [INFO] Score statistics - min: 0.0001, max: 0.9952, mean: 0.0479, std: 0.2036
+[2025-03-31 23:23:20] [INFO] Progress: 41/180 (22.8%) - Training model: DevNet
+[2025-03-31 23:23:20] [INFO] Task 'Initialize DevNet' completed in 0.00 seconds
+[2025-03-31 23:23:20] [ERROR] Error processing DevNet on AnnThyroid scenario C: DevNet.__init__() got an unexpected keyword argument 'seed'
+Traceback (most recent call last):
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 222, in run_experiment_1
+    model = model_initializer()
+            ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 97, in <lambda>
+    "DevNet": lambda: DevNet(seed=random.randint(0, 2**32 - 1)),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DevNet.__init__() got an unexpected keyword argument 'seed'
+[2025-03-31 23:23:20] [INFO] Processing dataset: AnnThyroid, scenario: D
+[2025-03-31 23:23:20] [INFO] Training set shape: (3150, 6), Anomalies: 150/3150 (4.76%)
+[2025-03-31 23:23:20] [INFO] Progress: 42/180 (23.3%) - Training model: FTTransformer
+[2025-03-31 23:23:20] [INFO] Task 'Initialize FTTransformer' completed in 0.00 seconds
+[2025-03-31 23:26:20] [INFO] Task 'Train FTTransformer on AnnThyroid scenario D' completed in 3 minutes and 0.63 seconds
+[2025-03-31 23:26:21] [INFO] Task 'Predict with FTTransformer' completed in 0.06 seconds
+[2025-03-31 23:26:21] [INFO] Results saved to: results_e1/E1_AnnThyroid_D_FTTransformer_results.npz
+[2025-03-31 23:26:21] [INFO] Score statistics - min: 0.0001, max: 0.9973, mean: 0.0805, std: 0.2632
+[2025-03-31 23:26:21] [INFO] Progress: 43/180 (23.9%) - Training model: DevNet
+[2025-03-31 23:26:21] [INFO] Task 'Initialize DevNet' completed in 0.00 seconds
+[2025-03-31 23:26:21] [ERROR] Error processing DevNet on AnnThyroid scenario D: DevNet.__init__() got an unexpected keyword argument 'seed'
+Traceback (most recent call last):
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 222, in run_experiment_1
+    model = model_initializer()
+            ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 97, in <lambda>
+    "DevNet": lambda: DevNet(seed=random.randint(0, 2**32 - 1)),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DevNet.__init__() got an unexpected keyword argument 'seed'
+[2025-03-31 23:26:21] [INFO] Processing dataset: AnnThyroid, scenario: E
+[2025-03-31 23:26:21] [INFO] Training set shape: (3300, 6), Anomalies: 300/3300 (9.09%)
+[2025-03-31 23:26:21] [INFO] Progress: 44/180 (24.4%) - Training model: FTTransformer
+[2025-03-31 23:26:21] [INFO] Task 'Initialize FTTransformer' completed in 0.00 seconds
+[2025-03-31 23:29:21] [INFO] Task 'Train FTTransformer on AnnThyroid scenario E' completed in 3 minutes and 0.93 seconds
+[2025-03-31 23:29:22] [INFO] Task 'Predict with FTTransformer' completed in 0.07 seconds
+[2025-03-31 23:29:22] [INFO] Results saved to: results_e1/E1_AnnThyroid_E_FTTransformer_results.npz
+[2025-03-31 23:29:22] [INFO] Score statistics - min: 0.0001, max: 0.9984, mean: 0.0970, std: 0.2871
+[2025-03-31 23:29:22] [INFO] Progress: 45/180 (25.0%) - Training model: DevNet
+[2025-03-31 23:29:22] [INFO] Task 'Initialize DevNet' completed in 0.00 seconds
+[2025-03-31 23:29:22] [ERROR] Error processing DevNet on AnnThyroid scenario E: DevNet.__init__() got an unexpected keyword argument 'seed'
+Traceback (most recent call last):
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 222, in run_experiment_1
+    model = model_initializer()
+            ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 97, in <lambda>
+    "DevNet": lambda: DevNet(seed=random.randint(0, 2**32 - 1)),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DevNet.__init__() got an unexpected keyword argument 'seed'
+[2025-03-31 23:29:22] [INFO] Loading dataset: EmailSpam
+[2025-03-31 23:29:22] [INFO] Task 'Load dataset EmailSpam' completed in 0.00 seconds
+[2025-03-31 23:29:22] [INFO] Test set shape: (1046, 3072), Anomalies: 46/1046 (4.40%)
+[2025-03-31 23:29:22] [INFO] Processing dataset: EmailSpam, scenario: A
+[2025-03-31 23:29:22] [INFO] Training set shape: (2000, 3072), Anomalies: 0/2000 (0.00%)
+[2025-03-31 23:29:22] [INFO] Progress: 46/180 (25.6%) - Training model: AE
+[2025-03-31 23:29:22] [INFO] Task 'Initialize AE' completed in 0.00 seconds
+[2025-03-31 23:29:29] [INFO] Task 'Train AE on EmailSpam scenario A' completed in 7.64 seconds
+[2025-03-31 23:29:29] [INFO] Task 'Predict with AE' completed in 0.06 seconds
+[2025-03-31 23:29:29] [INFO] Results saved to: results_e1/E1_EmailSpam_A_AE_results.npz
+[2025-03-31 23:29:29] [INFO] Score statistics - min: 0.0150, max: 0.9913, mean: 0.5592, std: 0.2653
+[2025-03-31 23:29:29] [INFO] Progress: 47/180 (26.1%) - Training model: VAE
+[2025-03-31 23:29:29] [INFO] Task 'Initialize VAE' completed in 0.00 seconds
+[2025-03-31 23:30:13] [INFO] Task 'Train VAE on EmailSpam scenario A' completed in 43.24 seconds
+[2025-03-31 23:30:13] [INFO] Task 'Predict with VAE' completed in 0.11 seconds
+[2025-03-31 23:30:13] [INFO] Results saved to: results_e1/E1_EmailSpam_A_VAE_results.npz
+[2025-03-31 23:30:13] [INFO] Score statistics - min: 0.0100, max: 0.9923, mean: 0.4783, std: 0.2924
+[2025-03-31 23:30:13] [INFO] Progress: 48/180 (26.7%) - Training model: DeepSVDD
+[2025-03-31 23:30:13] [INFO] Task 'Initialize DeepSVDD' completed in 0.00 seconds
+[2025-03-31 23:30:17] [INFO] Task 'Train DeepSVDD on EmailSpam scenario A' completed in 4.21 seconds
+[2025-03-31 23:30:17] [INFO] Task 'Predict with DeepSVDD' completed in 0.03 seconds
+[2025-03-31 23:30:17] [INFO] Results saved to: results_e1/E1_EmailSpam_A_DeepSVDD_results.npz
+[2025-03-31 23:30:17] [INFO] Score statistics - min: 0.0074, max: 0.9643, mean: 0.2670, std: 0.1719
+[2025-03-31 23:30:17] [INFO] Progress: 49/180 (27.2%) - Training model: DAGMM
+[2025-03-31 23:30:17] [INFO] Task 'Initialize DAGMM' completed in 0.00 seconds
+[2025-03-31 23:30:29] [INFO] Task 'Train DAGMM on EmailSpam scenario A' completed in 12.06 seconds
+[2025-03-31 23:30:29] [INFO] Task 'Predict with DAGMM' completed in 0.06 seconds
+[2025-03-31 23:30:29] [INFO] Results saved to: results_e1/E1_EmailSpam_A_DAGMM_results.npz
+[2025-03-31 23:30:29] [INFO] Score statistics - min: -6.2067, max: 1.5646, mean: -4.8614, std: 1.1441
+[2025-03-31 23:30:29] [INFO] Progress: 50/180 (27.8%) - Training model: SO_GAAL
+[2025-03-31 23:30:29] [INFO] Task 'Initialize SO_GAAL' completed in 0.00 seconds
+[2025-03-31 23:30:55] [INFO] Task 'Train SO_GAAL on EmailSpam scenario A' completed in 25.72 seconds
+[2025-03-31 23:30:55] [INFO] Task 'Predict with SO_GAAL' completed in 0.01 seconds
+[2025-03-31 23:30:55] [INFO] Results saved to: results_e1/E1_EmailSpam_A_SO_GAAL_results.npz
+[2025-03-31 23:30:55] [INFO] Score statistics - min: 0.0000, max: 1.0000, mean: 0.6297, std: 0.2285
+[2025-03-31 23:30:55] [INFO] Progress: 51/180 (28.3%) - Training model: LUNAR
+[2025-03-31 23:30:55] [INFO] Task 'Initialize LUNAR' completed in 0.00 seconds
+[2025-03-31 23:30:59] [INFO] Task 'Train LUNAR on EmailSpam scenario A' completed in 3.90 seconds
+[2025-03-31 23:30:59] [INFO] Task 'Predict with LUNAR' completed in 0.20 seconds
+[2025-03-31 23:30:59] [INFO] Results saved to: results_e1/E1_EmailSpam_A_LUNAR_results.npz
+[2025-03-31 23:30:59] [INFO] Score statistics - min: 0.0000, max: 0.7961, mean: 0.5300, std: 0.1612
+[2025-03-31 23:30:59] [INFO] Progress: 52/180 (28.9%) - Training model: GANoma
+[2025-03-31 23:30:59] [INFO] Task 'Initialize GANoma' completed in 0.00 seconds
+[2025-03-31 23:31:50] [INFO] Task 'Train GANoma on EmailSpam scenario A' completed in 51.25 seconds
+[2025-03-31 23:31:50] [INFO] Task 'Predict with GANoma' completed in 0.06 seconds
+[2025-03-31 23:31:50] [INFO] Results saved to: results_e1/E1_EmailSpam_A_GANoma_results.npz
+[2025-03-31 23:31:50] [INFO] Score statistics - min: 6.1891, max: 19.6206, mean: 14.3698, std: 5.2439
+[2025-03-31 23:31:50] [INFO] Processing dataset: EmailSpam, scenario: B
+[2025-03-31 23:31:50] [INFO] Training set shape: (2010, 3072), Anomalies: 10/2010 (0.50%)
+[2025-03-31 23:31:50] [INFO] Progress: 53/180 (29.4%) - Training model: FTTransformer
+[2025-03-31 23:31:50] [INFO] Task 'Initialize FTTransformer' completed in 0.00 seconds
+[2025-04-02 05:21:21] [INFO] Task 'Train FTTransformer on EmailSpam scenario B' completed in 1789 minutes and 30.30 seconds
+[2025-04-02 05:23:22] [INFO] Task 'Predict with FTTransformer' completed in 2 minutes and 1.28 seconds
+[2025-04-02 05:23:22] [INFO] Results saved to: results_e1/E1_EmailSpam_B_FTTransformer_results.npz
+[2025-04-02 05:23:22] [INFO] Score statistics - min: 0.0036, max: 0.0037, mean: 0.0037, std: 0.0000
+[2025-04-02 05:23:22] [INFO] Progress: 54/180 (30.0%) - Training model: DevNet
+[2025-04-02 05:23:22] [INFO] Task 'Initialize DevNet' completed in 0.00 seconds
+[2025-04-02 05:23:22] [ERROR] Error processing DevNet on EmailSpam scenario B: DevNet.__init__() got an unexpected keyword argument 'seed'
+Traceback (most recent call last):
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 222, in run_experiment_1
+    model = model_initializer()
+            ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/kamikowa/anomaly_master/anomaly_detection/experiment1.py", line 97, in <lambda>
+    "DevNet": lambda: DevNet(random_seed=random.randint(0, 2**32 - 1)),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DevNet.__init__() got an unexpected keyword argument 'seed'
+[2025-04-02 05:23:22] [INFO] Processing dataset: EmailSpam, scenario: C
+[2025-04-02 05:23:22] [INFO] Training set shape: (2020, 3072), Anomalies: 20/2020 (0.99%)
+[2025-04-02 05:23:22] [INFO] Progress: 55/180 (30.6%) - Training model: FTTransformer
+[2025-04-02 05:23:22] [INFO] Task 'Initialize FTTransformer' completed in 0.00 seconds
