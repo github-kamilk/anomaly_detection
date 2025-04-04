@@ -19,7 +19,9 @@ from sklearn.metrics import (
     average_precision_score, 
     precision_score, 
     recall_score, 
-    f1_score
+    f1_score,
+    precision_recall_curve, 
+    auc
 )
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -52,6 +54,8 @@ def calculate_metrics(y_true, scores):
     metrics = {}
 
     # Ranking metrics
+    precision, recall, _ = precision_recall_curve(y_true, scores)
+    metrics['auc-PR'] =  auc(recall, precision)
     metrics['auc'] = roc_auc_score(y_true, scores)
     metrics['ap'] = average_precision_score(y_true, scores)
     
@@ -136,7 +140,7 @@ def process_results(results_folder="results_e1", output_file=None, analyze_top_n
     results_df = pd.DataFrame(results_list)
     
     # Format metric columns
-    metric_cols = ['auc', 'ap', 'precision', 'recall', 'f1']
+    metric_cols = ['auc-PR', 'auc', 'ap', 'precision', 'recall', 'f1']
     results_df[metric_cols] = results_df[metric_cols].round(4)
     
     unique_models = results_df['model'].unique()

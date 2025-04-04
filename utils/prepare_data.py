@@ -8,7 +8,8 @@ def get_data(dataset):
         'NSL-KDD': 'nsl_kdd.npz',
         'CreditCard': 'fraud.npz',
         'AnnThyroid': 'annthyroid.npz',
-        'EmailSpam': 'email.npz'
+        'EmailSpam': 'email.npz',
+        'EmailSpam-bert': 'email_bert.npz'
     }
     
     data = np.load(f"datasets/preprocessed_datasets/{datasets_paths[dataset]}")
@@ -28,7 +29,8 @@ def prepare_data_e1(dataset, seed=42):
         'NSL-KDD': {'normal':5000, 'anomalies':[0,25,50,250,500], 'test_n':2000, 'test_a':200},
         'CreditCard': {'normal':5000, 'anomalies':[0,25,50,150,292], 'test_n':2000, 'test_a':200},
         'AnnThyroid': {'normal':3000, 'anomalies':[0,15,30,150,300], 'test_n':1000, 'test_a':100},
-        'EmailSpam': {'normal':2000, 'anomalies':[0,10,20,50,100], 'test_n':1000, 'test_a':46}
+        'EmailSpam': {'normal':2000, 'anomalies':[0,10,20,50,100], 'test_n':1000, 'test_a':46},
+        'EmailSpam-bert': {'normal':2000, 'anomalies':[0,10,20,50,100], 'test_n':1000, 'test_a':46},
     }
     
     params = scenarios[dataset]
