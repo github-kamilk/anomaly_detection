@@ -31,8 +31,9 @@ from pyod.models.auto_encoder import AutoEncoder
 from pyod.models.vae import VAE
 from pyod.models.deep_svdd import DeepSVDD
 from adbench.baseline.DAGMM.run import DAGMM
-from pyod.models.devnet import DevNet
-from pyod.models.so_gaal import SO_GAAL
+from adbench.baseline.DevNet.run import DevNet
+# from pyod.models.devnet import DevNet
+from pyod.models.so_gaal_new import SO_GAAL
 from pyod.models.lunar import LUNAR
 from adbench.baseline.FEAWAD.run import FEAWAD
 from adbench.baseline.GANomaly.run import GANomaly
@@ -86,20 +87,20 @@ def setup_logging(log_level=logging.INFO, log_to_file=True):
 # 2. Constant definitions and iteration lists
 ##############################################################################
 
-DATASETS = ["NSL-KDD", "CreditCard", "AnnThyroid", "EmailSpam"]
+DATASETS = ["NSL-KDD", "CreditCard", "AnnThyroid", "EmailSpam-bert"]
 SCENARIOS = ["A", "B", "C", "D", "E"]
 
 # You can store ready model instances or (name, class) pairs
 # in a dictionary for looping:
 MODEL_CONFIGS = {
     "FTTransformer": lambda:  FTTransformer(seed=random.randint(0, 2**32 - 1), model_name='FTTransformer'),
-    # "FEAWAD": lambda: FEAWAD(seed=random.randint(0, 2**32 - 1)),         
+    "FEAWAD": lambda: FEAWAD(seed=random.randint(0, 2**32 - 1)),         
     "DevNet": lambda: DevNet(seed=random.randint(0, 2**32 - 1)),
     "AE": lambda: AutoEncoder(random_state=random.randint(0, 2**32 - 1)),
     "VAE": lambda: VAE(random_state=random.randint(0, 2**32 - 1)),
     "DeepSVDD": lambda: DeepSVDD, 
     "DAGMM": lambda: DAGMM(seed=random.randint(0, 2**32 - 1)),
-    "SO_GAAL": lambda: SO_GAAL(),
+    "SO_GAAL": lambda: SO_GAAL(random_state=random.randint(0, 2**32 - 1)),
     "LUNAR": lambda: LUNAR(),
     "GANoma": lambda: GANomaly(seed=random.randint(0, 2**32 - 1))          
 }
@@ -117,9 +118,9 @@ SOMEHOW_SUPERVISED = ['FTTransformer', 'FEAWAD', 'DevNet']
 
 def get_prediction_score(model_name, model, X_test, X_train=None):
     """Get prediction scores based on model type"""
-    if model_name in ['FTTransformer', 'FEAWAD', 'GANoma']:
+    if model_name in ['FTTransformer', 'FEAWAD', 'GANoma', 'DevNet']:
         return model.predict_score(X_test)
-    elif model_name in ['AE', 'VAE', 'DeepSVDD', 'DevNet', 'SO_GAAL', 'LUNAR']:
+    elif model_name in ['AE', 'VAE', 'DeepSVDD', 'SO_GAAL', 'LUNAR']:
         return model.predict_proba(X_test)[:, 1]
     elif model_name == 'DAGMM':
         return model.predict_score(X_train, X_test)
