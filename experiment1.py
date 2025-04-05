@@ -121,7 +121,7 @@ def get_prediction_score(model_name, model, X_test, X_train=None):
     if model_name in ['FTTransformer', 'FEAWAD', 'GANoma', 'DevNet']:
         return model.predict_score(X_test)
     elif model_name in ['AE', 'VAE', 'DeepSVDD', 'SO_GAAL', 'LUNAR']:
-        return model.predict_proba(X_test)[:, 1]
+        return model.decision_function(X_test)
     elif model_name == 'DAGMM':
         return model.predict_score(X_train, X_test)
 
