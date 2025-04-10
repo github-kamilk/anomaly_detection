@@ -113,6 +113,12 @@ def process_results(results_folder="results_e1", output_file=None, analyze_top_n
                 scores = data['scores']
                 y_test = data['y_test']
                 
+                if model.upper() == 'FEAWAD':
+                    if scores.ndim == 2 and scores.shape[1] == 2:
+                        scores = scores[:, 0]
+                    else:
+                        logger.warning(f"FEAWAD format unexpected in {filename}, shape: {scores.shape}")
+                                
                 # Compute metrics
                 metrics = calculate_metrics(y_test, scores)
                 
