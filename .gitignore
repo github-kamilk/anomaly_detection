@@ -1,8 +1,11 @@
+algorithms_first_run.ipynb
 datasets/adbench
 datasets/nlp_adbench
 datasets/nsl-kdd
+datasets/preprocessed_datasets
 logs
 results_e1
+*.log
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
