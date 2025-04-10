@@ -18,7 +18,7 @@ Assumptions:
 """
 
 import sys
-from .utils import (
+from utils.utils import (
     setup_logging, MODEL_CONFIGS, run_experiment, 
     timer, log_system_info
 )
