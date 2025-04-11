@@ -225,7 +225,9 @@ def run_experiment(experiment_num, datasets, scenarios, model_configs, data_fold
                     # Fit the model to the data
                     with timer(f"Train {model_name} on {dataset_name} scenario {scenario}"):
                         if model_name not in SOMEHOW_SUPERVISED and model_name != 'GANoma' and model_name != 'DAGMM':
-                            model.fit(X_train)
+                            model.fit(X_train[y_train == 0])
+                        elif model_name == 'GANoma' or model_name == 'DAGMM':
+                            model.fit(X_train[y_train == 0], y_train[y_train == 0])
                         else:
                             model.fit(X_train, y_train)
                     
@@ -233,7 +235,7 @@ def run_experiment(experiment_num, datasets, scenarios, model_configs, data_fold
                         if model_name != 'DAGMM':
                             scores = get_prediction_score(model_name, model, X_test)
                         else:  
-                            scores = get_prediction_score(model_name, model, X_test, X_train)  
+                            scores = get_prediction_score(model_name, model, X_test, X_train[y_train == 0])  
 
                     if scores is None:
                         logging.warning(f"Model '{model_name}' did not return results. Skipping save.")
