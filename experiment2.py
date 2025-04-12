@@ -19,9 +19,10 @@ Assumptions:
 
 import sys
 from utils.utils import (
-    setup_logging, MODEL_CONFIGS, run_experiment, 
-    timer, log_system_info
+    setup_logging, run_experiment, 
+    timer, log_system_info, get_model_configs
 )
+from utils.prepare_data import prepare_data_e2
 
 ##############################################################################
 # 1. Experiment-specific constants
@@ -43,9 +44,9 @@ SEED = 42
 
 if __name__ == "__main__":
     logger = setup_logging("experiment2", log_to_file=True)
-    
+    model_configs = get_model_configs(seed=None)
     # Log system information
-    log_system_info(EXPERIMENT_NUM, DATASETS, SCENARIOS, MODEL_CONFIGS.keys())
+    log_system_info(EXPERIMENT_NUM, DATASETS, SCENARIOS, model_configs.keys())
     
     try:
         with timer("Complete Experiment 2"):
@@ -53,9 +54,10 @@ if __name__ == "__main__":
                 experiment_num=EXPERIMENT_NUM,
                 datasets=DATASETS,
                 scenarios=SCENARIOS,
-                model_configs=MODEL_CONFIGS,
+                model_configs=model_configs,
                 data_folder=DATA_FOLDER,
                 results_folder=RESULTS_FOLDER,
+                data_generator_function = False,
                 seed=SEED
                 # No filter for experiment 2 - run all models in all scenarios
             )

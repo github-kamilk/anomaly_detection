@@ -78,18 +78,22 @@ def setup_logging(experiment_name, log_level=logging.INFO, log_to_file=True):
 ##############################################################################
 
 # Standard model configurations that can be used across experiments
-MODEL_CONFIGS = {
-    "FTTransformer": lambda:  FTTransformer(seed=random.randint(0, 2**32 - 1), model_name='FTTransformer'),
-    "FEAWAD": lambda: FEAWAD(seed=random.randint(0, 2**32 - 1)),         
-    "DevNet": lambda: DevNet(seed=random.randint(0, 2**32 - 1)),
-    "AE": lambda: AutoEncoder(random_state=random.randint(0, 2**32 - 1)),
-    "VAE": lambda: VAE(random_state=random.randint(0, 2**32 - 1)),
-    "DeepSVDD": lambda: DeepSVDD, 
-    "DAGMM": lambda: DAGMM(seed=random.randint(0, 2**32 - 1)),
-    "SO_GAAL": lambda: SO_GAAL(random_state=random.randint(0, 2**32 - 1)),
-    "LUNAR": lambda: LUNAR(),
-    "GANoma": lambda: GANomaly(seed=random.randint(0, 2**32 - 1))          
-}
+def get_model_configs(seed=None):
+    def get_seed():
+        return seed if seed is not None else random.randint(0, 2**32 - 1)
+
+    return {
+        "FTTransformer": lambda: FTTransformer(seed=get_seed(), model_name='FTTransformer'),
+        "FEAWAD": lambda: FEAWAD(seed=get_seed()),         
+        "DevNet": lambda: DevNet(seed=get_seed()),
+        "AE": lambda: AutoEncoder(random_state=get_seed()),
+        "VAE": lambda: VAE(random_state=get_seed()),
+        "DeepSVDD": lambda: DeepSVDD(),  # Jeśli nie przyjmuje ziarna
+        "DAGMM": lambda: DAGMM(seed=get_seed()),
+        "SO_GAAL": lambda: SO_GAAL(random_state=get_seed()),
+        "LUNAR": lambda: LUNAR(),  # Jeśli nie przyjmuje ziarna
+        "GANoma": lambda: GANomaly(seed=get_seed())        
+    }
 
 SOMEHOW_SUPERVISED = ['FTTransformer', 'FEAWAD', 'DevNet']
 
@@ -130,7 +134,7 @@ def timer(task_name):
 ##############################################################################
 
 def run_experiment(experiment_num, datasets, scenarios, model_configs, data_folder, results_folder, 
-                  seed=42, model_scenario_filter=None):
+                  seed=42, data_generator_function=False, model_scenario_filter=None):
     """
     Generic experiment runner for anomaly detection models.
     
@@ -171,18 +175,25 @@ def run_experiment(experiment_num, datasets, scenarios, model_configs, data_fold
     skipped_runs = 0
     
     for dataset_name in datasets:
-        # Path to the .npz file with prepared data
-        data_path = os.path.join(data_folder, f"E{experiment_num}_{dataset_name}_{seed}_data.npz")
+        if not data_generator_function:
+            # Path to the .npz file with prepared data
+            data_path = os.path.join(data_folder, f"E{experiment_num}_{dataset_name}_{seed}_data.npz")
 
-        if not os.path.isfile(data_path):
-            logging.warning(f"File {data_path} does not exist. Skipping dataset: {dataset_name}")
-            skipped_runs += len(scenarios) * len(model_configs)
-            continue
+            if not os.path.isfile(data_path):
+                logging.warning(f"File {data_path} does not exist. Skipping dataset: {dataset_name}")
+                skipped_runs += len(scenarios) * len(model_configs)
+                continue
 
-        logging.info(f"Loading dataset: {dataset_name}")
-        with timer(f"Load dataset {dataset_name}"):
-            data = np.load(data_path, allow_pickle=True)
-
+            logging.info(f"Loading dataset: {dataset_name}")
+            with timer(f"Load dataset {dataset_name}"):
+                data = np.load(data_path, allow_pickle=True)
+        else:
+            logging.info(f"Generating dataset: {dataset_name}")
+            sd = random.randint(0, 2**32 - 1)
+            with timer(f"Generate dataset {dataset_name}"):
+                data = data_generator_function(dataset_name, seed=sd, save_dataset=False)
+            data_path = f'generated_with_seed_{sd}'
+            
         # Load the common test set
         X_test = data["X_test"]
         y_test = data["y_test"]

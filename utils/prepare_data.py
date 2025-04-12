@@ -19,7 +19,7 @@ def get_data(dataset):
     
     return X, y
 
-def prepare_data_e1(dataset, seed=42):
+def prepare_data_e1(dataset, seed=42, save_dataset=True):
     X, y = get_data(dataset)
     
     np.random.seed(seed)
@@ -77,10 +77,12 @@ def prepare_data_e1(dataset, seed=42):
         data_dict[f'y_train_{sc_label}'] = y_train
 
     # Save all data to a single npz file
-    np.savez(f'datasets/E1/E1_{dataset}_{seed}_data.npz', **data_dict)
+    if save_dataset:
+        np.savez(f'datasets/E1/E1_{dataset}_{seed}_data.npz', **data_dict)
 
+    return data_dict
 
-def prepare_data_e2(dataset, seed=42):
+def prepare_data_e2(dataset, seed=42, save_dataset=True):
     X, y = get_data(dataset)
     
     np.random.seed(seed)
@@ -133,8 +135,11 @@ def prepare_data_e2(dataset, seed=42):
         data_dict[f'y_train_{sc_label}'] = y_train
 
     # Save all data to a single npz file
-    np.savez(f'datasets/E2/E2_{dataset}_{seed}_data.npz', **data_dict)
+    if save_dataset:
+        np.savez(f'datasets/E2/E2_{dataset}_{seed}_data.npz', **data_dict)
 
+    return data_dict
+    
 if __name__ == "__main__":
     prepare_data_e2('NSL-KDD')
     prepare_data_e2('CreditCard')
