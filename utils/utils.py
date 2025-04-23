@@ -134,7 +134,7 @@ def timer(task_name):
 ##############################################################################
 
 def run_experiment(experiment_num, datasets, scenarios, model_configs, data_folder, results_folder, 
-                  seed=42, data_generator_function=False, model_scenario_filter=None):
+                  seed=42, data_generator_function=False, model_scenario_filter=None, common_test_set=True):
     """
     Generic experiment runner for anomaly detection models.
     
@@ -194,10 +194,7 @@ def run_experiment(experiment_num, datasets, scenarios, model_configs, data_fold
                 data = data_generator_function(dataset_name, seed=sd, save_dataset=False)
             data_path = f'generated_with_seed_{sd}'
             
-        # Load the common test set
-        X_test = data["X_test"]
-        y_test = data["y_test"]
-        logging.info(f"Test set shape: {X_test.shape}, Anomalies: {np.sum(y_test == 1)}/{len(y_test)} ({np.mean(y_test) * 100:.2f}%)")
+           
 
         # For each scenario, load the corresponding training sets
         for scenario in scenarios:
@@ -211,7 +208,17 @@ def run_experiment(experiment_num, datasets, scenarios, model_configs, data_fold
 
             X_train = data[x_train_key]
             y_train = data[y_train_key]
-
+            
+            if common_test_set:
+                X_test = data["X_test"]
+                y_test = data["y_test"]
+            else:
+                x_test_key = f"X_test_{scenario}"
+                y_test_key = f"y_test_{scenario}"
+                X_test = data[x_test_key]
+                y_test = data[y_test_key]
+                
+            logging.info(f"Test set shape: {X_test.shape}, Anomalies: {np.sum(y_test == 1)}/{len(y_test)} ({np.mean(y_test) * 100:.2f}%)")
             logging.info(f"Processing dataset: {dataset_name}, scenario: {scenario}")
             logging.info(f"Training set shape: {X_train.shape}, Anomalies: {np.sum(y_train == 1)}/{len(y_train)} ({np.mean(y_train) * 100:.2f}%)")
 

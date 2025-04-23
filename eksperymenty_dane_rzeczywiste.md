@@ -225,16 +225,16 @@ Dla każdego typu anomalii wygenerujemy trzy poziomy trudności:
 
 | Typ anomalii  | Opis i parametry bazowe                               | Poziomy trudności (parametry α) |
 |---------------|--------------------------------------------------------|----------------------------------|
-| **Local**     | GMM ze skalowaną kowariancją: `Σ' = αΣ`                | łatwy: α=2<br>średni: α=5<br>trudny: α=10 |
-| **Global**    | Uniform(min-max), skalowane zakresy: `α × zakres`      | łatwy: α=1.1<br>średni: α=1.25<br>trudny: α=1.5 |
+| **Local**     | GMM ze skalowaną kowariancją: `Σ' = αΣ`                | łatwy: α=2<br>średni: α=5<br>trudny: α=10 | 15
+| **Global**    | Uniform(min-max), skalowane zakresy: `α × zakres`      | łatwy: α=1.1<br>średni: α=1.25<br>trudny: α=1.5 | 2
 | **Dependency**| Vine Copula + KDE (zaburzenie zależności między cechami)| łatwy: 35% cech zaburzonych <br>średni: 70% cech zaburzonych<br>trudny: 100% cech zaburzonych |
-| **Clustered** | GMM wokół średniej z większą odległością od normalnych | łatwy: α=2<br>średni: α=5<br>trudny: α=10 |
+| **Clustered** | GMM wokół średniej z większą odległością od normalnych | łatwy: α=2<br>średni: α=5<br>trudny: α=10 | 15
 
 
-Trenowanie GMM/Vine Copula: 5000 (3500 dla credit) normalnych próbek?
+Trenowanie GMM/Vine Copula: 5000 (3500 dla email) normalnych próbek
 
 Generowanie:
-Trening -  5000 normalnych, 250 anomalii dla semi/supervised
+Trening -  5000 normalnych, 250 anomalii (tylko dla semi/supervised)
 Test - 2000 normalnych, 200 anomalii
 
 ---
