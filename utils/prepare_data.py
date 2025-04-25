@@ -182,10 +182,8 @@ def prepare_data_e3(dataset, anomaly_type, seed=42, save_dataset=True):
     # Indeksy dla normalnych danych do podziału na zbiór treningowy i testowy
     normal_indices = np.random.permutation(len(X_normal))
     train_indices = normal_indices[:train_normal_samples]
-    test_indices = normal_indices[train_normal_samples:train_normal_samples+test_normal_samples]
     
     X_train_normal = X_normal[train_indices]
-    # X_test_normal = X_normal[test_indices]
     
     data_dict = {}
     
@@ -210,7 +208,7 @@ def prepare_data_e3(dataset, anomaly_type, seed=42, save_dataset=True):
             
             # Generuj syntetyczne normalne dane dla zbioru treningowego
             X_synthetic_train_normal = gm.sample(train_normal_samples)[0]
-            X_synthetic_test_normal = gm.sample(test_anom_samples)[0]
+            X_synthetic_test_normal = gm.sample(test_normal_samples)[0]
             
             # Generuj syntetyczne anomalie
             if anomaly_type == 'local':
@@ -256,7 +254,7 @@ def prepare_data_e3(dataset, anomaly_type, seed=42, save_dataset=True):
             
             # Generuj syntetyczne normalne dane
             X_synthetic_train_normal = copula.sample(train_normal_samples).values
-            X_synthetic_test_normal = copula.sample(test_anom_samples).values
+            X_synthetic_test_normal = copula.sample(test_normal_samples).values
             
             # Dla anomalii typu dependency, zaburzamy określony procent cech
             num_features_to_disturb = int(feature_dim * difficulty_param)
@@ -266,34 +264,21 @@ def prepare_data_e3(dataset, anomaly_type, seed=42, save_dataset=True):
             X_synthetic_train_anomalies = np.zeros((train_anom_samples, feature_dim))
             X_synthetic_test_anomalies = np.zeros((test_anom_samples, feature_dim))
             
+            samp_data = copula.sample(train_anom_samples + test_anom_samples)
+            
             for j in range(feature_dim):
-                kde = GaussianKDE()
-                kde.fit(X_train_normal_subset[:, j])
-                
                 if j in disturbed_features:
+                    kde = GaussianKDE()
+                    kde.fit(X_train_normal_subset[:, j])
                     # Zaburzone cechy - użyj KDE dla niezależnej generacji
                     X_synthetic_train_anomalies[:, j] = kde.sample(train_anom_samples)
                     X_synthetic_test_anomalies[:, j] = kde.sample(test_anom_samples)
                 else:
                     # Niezaburzone cechy - użyj tego samego rozkładu co dla normalnych
-                    sampled_data = copula.sample(train_anom_samples + test_anom_samples).values[:, j]
+                    sampled_data = samp_data.values[:, j].copy()
                     X_synthetic_train_anomalies[:, j] = sampled_data[:train_anom_samples]
                     X_synthetic_test_anomalies[:, j] = sampled_data[train_anom_samples:]
             
-            # Jeśli używaliśmy podzbioru cech, musimy odtworzyć pełny wymiar
-            if feature_dim < X_train_normal.shape[1]:
-                full_X_synthetic_train_normal = np.zeros((train_normal_samples, X_train_normal.shape[1]))
-                full_X_synthetic_train_anomalies = np.zeros((train_anom_samples, X_train_normal.shape[1]))
-                full_X_synthetic_test_anomalies = np.zeros((test_anom_samples, X_train_normal.shape[1]))
-                
-                for j, orig_j in enumerate(selected_features):
-                    full_X_synthetic_train_normal[:, orig_j] = X_synthetic_train_normal[:, j]
-                    full_X_synthetic_train_anomalies[:, orig_j] = X_synthetic_train_anomalies[:, j]
-                    full_X_synthetic_test_anomalies[:, orig_j] = X_synthetic_test_anomalies[:, j]
-                
-                X_synthetic_train_normal = full_X_synthetic_train_normal
-                X_synthetic_train_anomalies = full_X_synthetic_train_anomalies
-                X_synthetic_test_anomalies = full_X_synthetic_test_anomalies
         
         # Łączenie danych treningowych i testowych
         X_train = np.vstack((X_synthetic_train_normal, X_synthetic_train_anomalies))
