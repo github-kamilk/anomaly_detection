@@ -69,7 +69,7 @@ if __name__ == '__main__':
                         default='logs_e1', 
                         help='Directory containing .log files')
     parser.add_argument('--output_csv',
-                        default='training_times.csv', 
+                        default='results/training_times.csv',
                         help='Path for the output CSV file')
     args = parser.parse_args()
     main(args.input_dir, args.output_csv)

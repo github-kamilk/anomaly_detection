@@ -46,7 +46,7 @@ def calculate_metrics(y_true, scores):
 
     return metrics
 
-def process_results(main_folder, output_file="experiment1_results.csv"):
+def process_results(main_folder, output_file="results/experiment1_results.csv"):
     logger = setup_logging()
     logger.info(f"Processing results from folder: {main_folder}")
 
@@ -124,7 +124,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         '--output_file',
-        default='experiment1_results.csv',
+        default='results/experiment1_results.csv',
         help='CSV filename for saving the results.'
     )
 
