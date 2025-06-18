@@ -250,7 +250,7 @@ def generate_visualizations(results_df, output_folder="visualizations"):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process anomaly experiment results')
     parser.add_argument('--results_folder', default='results_e1', help='Folder with result files')
-    parser.add_argument('--output_file', default='experiment1_results.csv', help='Output CSV file')
+    parser.add_argument('--output_file', default='results/experiment1_results.csv', help='Output CSV file')
     parser.add_argument('--visualize', action='store_true', help='Generate visualizations')
     
     args = parser.parse_args()
